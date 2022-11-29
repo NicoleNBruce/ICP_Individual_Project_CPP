@@ -11,6 +11,11 @@ Helper.cpp/h - It contains a bunch of helper functions
 
 main.cpp - The program is run from this class. Here, the path to the input file to be read from is passed into the program.
 
-To run the program, you must have C++ 14 first, then download the project and run main.cpp. If you want to try other sources and destinations, create a txt file with the city and country (separated by a space) of both the source and destination airports, and name it in the format "sourcecity-destinationcity".txt. An example input file named 'accra-winnipeg.txt' is in the folder and can serve as a template. Then, you must pass the input file name into the RouteFinding object declaration in main.cpp, i.e. “RouteFinding find("accra-winnipeg.txt");”.
+To run the program, you must download the project and run main.cpp. (If you get any errors, consider creating a new project in your IDE and copying the program files from this project to it). If you want to try other sources and destinations, create a txt file with the city and country (separated by a space) of both the source and destination airports, and name it in the format "sourcecity-destinationcity".txt. An example input file named 'accra-winnipeg.txt' is in the folder and can serve as a template. Then, you must pass the input file name into the RouteFinding object declaration in main.cpp, i.e. “RouteFinding find("accra-winnipeg.txt");”.
 
-NB: Make sure that the location you type in the input file is separated by a comma and a space, e.g., "Accra, Ghana" and not "Accra,Ghana".
+**NB:** 
+**1. This project was created with C++ 14 and has a cmake version 3.23
+**2. Make sure your input file is in the cmake-build-debug folder
+**3. Ensure that you name your input file after the source and destination cities specified in the file, e.g. "accra-winnipeg"
+**4. Make sure that the location you type in the input file is separated by a comma and a space, e.g., "Accra, Ghana" and not "Accra,Ghana".******
+**
