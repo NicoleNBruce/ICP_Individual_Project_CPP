@@ -1,12 +1,10 @@
 //
-// Created by anoth on 11/27/2022.
+// Created by anoth on 11/23/2022.
 //
 
 #ifndef INDIV_CPP_NODE_H
 #define INDIV_CPP_NODE_H
 
-#endif //INDIV_CPP_NODE_H
-#pragma once
 
 #include <deque>
 #include "Airport.h"
@@ -43,6 +41,7 @@ public:
     bool operator>=(const Node &rhs) const;
 
 };
+#endif //INDIV_CPP_NODE_H
 
 
 

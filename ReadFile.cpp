@@ -6,9 +6,17 @@
 #include <list>
 
 
+/**
+ * This is a default constructor
+ */
 ReadFile::ReadFile() {
 }
 
+/**
+ * This constructor takes in a string and sets the inputfile variable to that string.
+ *
+ * @param input the name of the file to be read
+ */
 ReadFile::ReadFile(string input){
     this->inputfile = input;
 }
@@ -62,7 +70,7 @@ void ReadFile::readairportfile() {
  * It reads the routes.csv file and stores the data in a map of vectors of Routes objects
  */
 void ReadFile::readroutefile() {
-    input.open("routes.csv");//add error handling
+    input.open("routes.csv");
     if (input.fail()) {
         cerr << "Unable to open file " + routeFile << endl;
     }
@@ -99,7 +107,7 @@ void ReadFile::readroutefile() {
  * This function reads the airline file and stores the data in a map of vectors of airline objects
  */
 void ReadFile::readairlinefile() {
-    input.open( "airlines.csv");//add error handling
+    input.open( "airlines.csv");
     if (input.fail()) {
         cerr << "Unable to open file " + airlineFile << endl;
     }
@@ -135,7 +143,6 @@ void ReadFile::readairlinefile() {
 
 }
 
-
 /**
  * This function reads the input file and stores the source and destination strings in the source and destination variables
  */
@@ -145,8 +152,6 @@ void ReadFile::readInputFile() {
         cerr << "Unable to open file " + inputfile << endl;
     }
 
-    // as in, if the city or country is not in your map, it should tell the user that its not a valid location
-    //also, i like your keyboard. bery nice keys. good travel. 8.5/10
     string srcline;
     string destline;
 
@@ -159,7 +164,7 @@ void ReadFile::readInputFile() {
         srcline = srcline + temp;
     }
 
-    //using getline to get the source location (city and country) as specified in the input file
+    //using getline to get the destination location (city and country) as specified in the input file
     getline(input, destline);
     stringstream str(destline);
     string temp2;
@@ -167,7 +172,6 @@ void ReadFile::readInputFile() {
     while (getline(str, temp2, '\n')) {
         destline = destline + temp2;
     }
-
     source = srcline;
     destination = destline;
 

@@ -7,6 +7,12 @@
 #include "Helpers.h"
 
 
+/**
+ * This function is the constructor for the RouteFinding class. It takes in a string input, which is the name of the input
+ * file. It then creates a ReadFile object called read, which is used to read the input file.
+ *
+ * @param input The name of the input file.
+ */
 RouteFinding::RouteFinding(string input) {
     this->inputFile = input;
     this->read = ReadFile(input);
@@ -27,8 +33,8 @@ bool RouteFinding::goal_test(string state) {
 }
 
 /**
- * It takes in a string id, and if the id is in the routes map, it sets the actions list to the list of strings in the
- * routes map. It then pushes the airport object associated with the id into the successors vector
+ * It takes in an iata code, and if the code is in the routes map, it sets the actions list to the route details in the
+ * routes map. It then pushes the airport object associated with the iata code into the successors vector
  *
  * @param id The id of the airport you want to go to.
  */
@@ -71,18 +77,19 @@ deque<Node> RouteFinding::solutionpath(Node node1) {
  * @param routes a deque of Node objects that represent the flights you have found.
  */
 void RouteFinding::writeFile(deque<Node>routes){
-
-    string source;
-    stringstream  input(read.inputfile);
-    getline(input, source, '.');
-    string outputFile = source + "_output.txt" ;
-
     ofstream outputStream;
     int totstops = 0;
     int numbering = 0;
     string numbering_str;
 
+    //getting the name of the input file and using it to create the name of its output file
+    string source;
+    stringstream  input(read.inputfile);
+    getline(input, source, '.');
+    string outputFile = source + "_output.txt" ;
+
     outputStream.open(outputFile);
+
     if (input.fail()) {
         cerr << "Unable to open file " + outputFile << endl;
     }
@@ -92,8 +99,8 @@ void RouteFinding::writeFile(deque<Node>routes){
         numbering+=1;
         numbering_str = intToStr(numbering);
         outputStream<<numbering_str + ". " + node.getAirlineCode()+ " from "+ node.getParent() + " to "+ node.getState() + " "+ node.getNoOfStops() + " stops"<<endl;
-
     }
+    //writing additional information to the file
     string noOfFlights = "Total number of flights: " + numbering_str;
     string stops = "Total additional stops: " + totstops;
     outputStream<<"Total number of flights: " + numbering_str<<endl;
@@ -163,7 +170,7 @@ deque<Node> RouteFinding::breadthfirstsearch(){
  *
  */
 void RouteFinding::run(){
-    //input validation
+    //input validation: checking if the city and country exist in the unordered map of the airport details
     if((read.airports.find(read.source)==read.airports.end()) || (read.airports.find(read.destination)==read.airports.end())){
         cerr << "That is not a valid location. Check your input again." << endl;
         return;

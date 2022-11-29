@@ -1,12 +1,11 @@
 //
-// Created by anoth on 11/26/2022.
+// Created by Nicole Nanka-Bruce on 11/22/2022.
 //
 
 #ifndef UNTITLED_ROUTES_H
 #define UNTITLED_ROUTES_H
 
-#endif //UNTITLED_ROUTES_H
-#pragma once
+
 #include <string>
 
 using namespace std;
@@ -22,7 +21,6 @@ private:
     string codeshare;
     string stops;
     string equipment;
-    //hashmap of string and list of string called routes
 public:
 
     Routes(string airlineCode, string airlineID, string srcCode, string srcID, string destCode, string destID, string codeshare, string stops, string equipment);
@@ -46,5 +44,5 @@ public:
 };
 
 
-
+#endif //UNTITLED_ROUTES_H
 

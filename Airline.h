@@ -1,12 +1,12 @@
 //
-// Created by anoth on 11/22/2022.
+// Created by Nicole Nanka-Bruce on 11/22/2022.
 //
 
 #ifndef UNTITLED_AIRLINE_H
 #define UNTITLED_AIRLINE_H
 
-#endif //UNTITLED_AIRLINE_H
-#pragma once
+
+
 #include <string>
 using namespace std;
 
@@ -28,4 +28,4 @@ public:
 };
 
 
-
+#endif //UNTITLED_AIRLINE_H

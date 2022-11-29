@@ -5,8 +5,7 @@
 #ifndef UNTITLED_ROUTEFINDING_H
 #define UNTITLED_ROUTEFINDING_H
 
-#endif //UNTITLED_ROUTEFINDING_H
-#pragma once
+
 
 #include "Airport.h"
 #include "ReadFile.h"
@@ -30,3 +29,4 @@ public:
     void writeFile(deque<Node> pathlist);
     void run();
 };
+#endif //UNTITLED_ROUTEFINDING_H

@@ -5,8 +5,7 @@
 #ifndef UNTITLED_READFILE_H
 #define UNTITLED_READFILE_H
 
-#endif //UNTITLED_READFILE_H
-#pragma once
+
 
 #include <iostream>
 #include <fstream>
@@ -61,3 +60,4 @@ public:
 
 
 };
+#endif //UNTITLED_READFILE_H

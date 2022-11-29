@@ -1,12 +1,11 @@
 //
-// Created by anoth on 11/26/2022.
+// Created by Nicole Nanka-Bruce on 11/22/2022.
 //
 
 #ifndef UNTITLED_AIRPORT_H
 #define UNTITLED_AIRPORT_H
 
-#endif //UNTITLED_AIRPORT_H
-#pragma once
+
 #include <string>
 #include <vector>
 
@@ -56,3 +55,4 @@ public:
     string tostring();
 };
 
+#endif //UNTITLED_AIRPORT_H
