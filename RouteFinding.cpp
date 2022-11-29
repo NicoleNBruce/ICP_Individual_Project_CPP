@@ -1,7 +1,6 @@
 //
 // Created by Nicole Nanka-Bruce on 11/22/2022.
 //
-#include <algorithm>
 #include "RouteFinding.h"
 #include "Node.h"
 #include <queue>
@@ -76,7 +75,6 @@ void RouteFinding::writeFile(deque<Node>routes){
     string source;
     stringstream  input(read.inputfile);
     getline(input, source, '.');
-
     string outputFile = source + "_output.txt" ;
 
     ofstream outputStream;
@@ -105,6 +103,12 @@ void RouteFinding::writeFile(deque<Node>routes){
     outputStream.close();
 
 }
+/**
+    * The function implements the breadth first algorithm and
+    * returns a deque of nodes which contains the path from the source to the destination
+    *
+    * @return a deque of nodes.
+    */
 
 deque<Node> RouteFinding::breadthfirstsearch(){
     deque<Node> frontier;
@@ -118,7 +122,7 @@ deque<Node> RouteFinding::breadthfirstsearch(){
             string code = airport.getiata_code();
             Node node(code, "", "", "");
             if (goal_test(state)) {
-                cout << "Bingo!" << endl;
+                cout << "You're already at the destination!" << endl;
             }
             frontier.push_back(node);
         }
@@ -150,4 +154,20 @@ deque<Node> RouteFinding::breadthfirstsearch(){
     }
     deque<Node> empty_deque;
     return empty_deque;
+}
+
+/**
+ * It checks to see if the source and destination are valid airports, and if they are, it runs the breadthfirstsearch
+ * function
+ *
+ */
+void RouteFinding::run(){
+    //input validation
+    if((read.airports.find(read.source)==read.airports.end()) || (read.airports.find(read.destination)==read.airports.end())){
+        cerr << "That is not a valid location. Check your input again." << endl;
+        return;
+    }
+    else {
+        breadthfirstsearch();
+    }
 }

@@ -1,5 +1,5 @@
 //
-// Created by anoth on 11/22/2022.
+// Created by Nicole Nanka-Bruce on 11/22/2022.
 //
 
 #include "ReadFile.h"
@@ -147,6 +147,8 @@ void ReadFile::readInputFile() {
         cerr << "Unable to open file " + inputfile << endl;
     }
 
+    // as in, if the city or country is not in your map, it should tell the user that its not a valid location
+    //also, i like your keyboard. bery nice keys. good travel. 8.5/10
     string srcline;
     string destline;
 
@@ -170,13 +172,13 @@ void ReadFile::readInputFile() {
 
     source = srcline;
     destination = destline;
+
 }
 
 /**
  * This function reads the airport, route, airline, and input files.
  */
 void ReadFile::readFiles() {
-
     readairportfile();
     readroutefile();
     readairlinefile();

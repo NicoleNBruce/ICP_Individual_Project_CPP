@@ -1,5 +1,5 @@
 //
-// Created by anoth on 11/26/2022.
+// Created by Nicole Nanka-Bruce on 11/22/2022.
 //
 
 #ifndef UNTITLED_ROUTEFINDING_H
@@ -15,8 +15,6 @@
 
 class RouteFinding{
 private:
-
-//    ReadFile read;
     string inputFile;
     list<Node> explored;
     bool goal_test(string state);
@@ -25,12 +23,10 @@ private:
 public:
     deque<Node> pathlist;
     vector<Routes> actions;
-    unordered_map<string, Airport> airportCodetoAirport;
-    unordered_map<string, string> airportLocation ;
-    unordered_map<string, list<Airport>> airports ;
 
     RouteFinding(string);
     deque<Node> breadthfirstsearch();
     deque<Node> solutionpath(Node node1);
     void writeFile(deque<Node> pathlist);
+    void run();
 };
