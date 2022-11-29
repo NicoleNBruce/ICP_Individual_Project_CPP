@@ -1,0 +1,4 @@
+1. JL from SYD to NRT 0 stops
+Total number of flights: 1
+Total additional stops: 0
+Optimality criteria: flights

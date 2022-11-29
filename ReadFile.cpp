@@ -53,8 +53,6 @@ void ReadFile::readairportfile() {
 
             airportLocation.insert({ airportCode, ID });
             airportCodetoObject.insert({ airportCode, air });
-
-
         }
     }
     input.close();

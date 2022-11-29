@@ -153,6 +153,7 @@ deque<Node> RouteFinding::breadthfirstsearch(){
         }
     }
     deque<Node> empty_deque;
+    cout<<"No path found.";
     return empty_deque;
 }
 
